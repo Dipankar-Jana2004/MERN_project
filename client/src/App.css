@@ -1,6 +1,3 @@
-/* ==============================
-   GLOBAL
-================================ */
 
 * {
   margin: 0;
@@ -8,139 +5,132 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  width: 100%;
   min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
   color: #1f2937;
 }
 
 
-/* ==============================
-   MAIN CONTAINER
-================================ */
-
-body > #root > div {
+#root {
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 50px 20px;
+}
+
+#root > div {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 25px;
 }
 
 
-/* ==============================
-   MAIN TITLE
-================================ */
-
 h3 {
-  color: #172554;
-  font-size: 28px;
   text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #172554;
   margin-bottom: 25px;
 }
 
 
-/* ==============================
-   FORM
-================================ */
-
 form {
-  background: #ffffff;
-  max-width: 850px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto 40px;
+
   padding: 30px;
+
+  background: #ffffff;
+
   border-radius: 16px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
 
-/* ==============================
-   INPUT
-================================ */
-
 form input {
   width: 100%;
-  padding: 14px 16px;
+  height: 48px;
+
+  padding: 0 15px;
 
   border: 1px solid #d1d5db;
   border-radius: 8px;
 
-  font-size: 15px;
-  color: #111827;
-
   outline: none;
-  transition: all 0.2s ease;
+
+  font-size: 15px;
+
+  background: #ffffff;
+
+  transition: 0.2s ease;
+}
+
+form input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 form input::placeholder {
   color: #9ca3af;
 }
 
-form input:focus {
-  border-color: #2563eb;
 
-  box-shadow:
-    0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-
-/* ==============================
-   FORM BUTTON
-================================ */
 
 form button {
   grid-column: 1 / -1;
 
-  padding: 13px 22px;
-
-  background: #2563eb;
-  color: white;
+  width: 100%;
+  height: 48px;
 
   border: none;
   border-radius: 8px;
+
+  background: #2563eb;
+  color: #ffffff;
 
   font-size: 15px;
   font-weight: 600;
 
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition: 0.2s ease;
 }
 
 form button:hover {
   background: #1d4ed8;
-  transform: translateY(-1px);
 }
 
 form button:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
-
-/* ==============================
-   TABLE
-================================ */
 
 table {
   width: 100%;
-  border-collapse: collapse;
 
   background: #ffffff;
 
-  border-radius: 14px;
+  border-collapse: collapse;
+
+  border-radius: 12px;
+
   overflow: hidden;
 
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
-
-
-/* ==============================
-   TABLE HEADER
-================================ */
 
 thead {
   background: #172554;
@@ -148,7 +138,8 @@ thead {
 }
 
 th {
-  padding: 16px;
+  padding: 15px;
+
   text-align: left;
 
   font-size: 14px;
@@ -156,21 +147,14 @@ th {
 }
 
 
-/* ==============================
-   TABLE BODY
-================================ */
-
 td {
-  padding: 15px 16px;
+  padding: 14px 15px;
 
   border-bottom: 1px solid #e5e7eb;
 
   font-size: 14px;
-  color: #374151;
-}
 
-tbody tr {
-  transition: background 0.2s ease;
+  color: #374151;
 }
 
 tbody tr:hover {
@@ -180,11 +164,6 @@ tbody tr:hover {
 tbody tr:last-child td {
   border-bottom: none;
 }
-
-
-/* ==============================
-   EDIT BUTTON
-================================ */
 
 td button:first-child {
   padding: 7px 13px;
@@ -200,19 +179,13 @@ td button:first-child {
 
   cursor: pointer;
 
-  margin-right: 7px;
-
-  transition: 0.2s ease;
+  margin-right: 6px;
 }
 
 td button:first-child:hover {
   background: #fde68a;
 }
 
-
-/* ==============================
-   DELETE BUTTON
-================================ */
 
 td button:last-child {
   padding: 7px 13px;
@@ -227,8 +200,6 @@ td button:last-child {
   font-weight: 600;
 
   cursor: pointer;
-
-  transition: 0.2s ease;
 }
 
 td button:last-child:hover {
@@ -236,44 +207,70 @@ td button:last-child:hover {
 }
 
 
-/* ==============================
-   TABLE SCROLL
-================================ */
+@media (max-width: 1024px) {
 
-table {
-  min-width: 700px;
+  #root > div {
+    padding: 35px 20px;
+  }
+
+  h3 {
+    font-size: 27px;
+  }
+
+  form {
+    max-width: 800px;
+    padding: 25px;
+  }
+
+  th,
+  td {
+    padding: 13px;
+  }
 }
 
-body > #root > div {
-  overflow-x: hidden;
-}
-
-
-/* ==============================
-   TABLET
-================================ */
 
 @media (max-width: 768px) {
 
-  body > #root > div {
-    padding: 35px 15px;
+  #root > div {
+    padding: 30px 15px;
   }
 
   h3 {
     font-size: 24px;
+    margin-bottom: 20px;
   }
 
   form {
-    grid-template-columns: 1fr;
     padding: 22px;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
   }
 
   form button {
     grid-column: auto;
   }
 
+  form input {
+    height: 46px;
+  }
+
+  form button {
+    height: 46px;
+  }
+
+
   table {
-    font-size: 13px;
+    display: block;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
   }
 
   th,
@@ -283,63 +280,74 @@ body > #root > div {
 }
 
 
-/* ==============================
-   MOBILE
-================================ */
+@media (max-width: 480px) {
 
-@media (max-width: 600px) {
-
-  body > #root > div {
-    padding: 25px 10px;
+  #root > div {
+    padding: 20px 10px;
   }
 
   h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 18px;
   }
 
   form {
     padding: 18px;
+
     border-radius: 12px;
-    gap: 14px;
+
+    gap: 13px;
   }
 
   form input {
-    padding: 12px;
+    height: 44px;
+
+    padding: 0 12px;
+
     font-size: 14px;
   }
 
   form button {
-    padding: 12px;
+    height: 44px;
+
+    font-size: 14px;
   }
 
-  /* Make table horizontally scrollable */
   table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    font-size: 13px;
+
     border-radius: 10px;
   }
 
-  th,
+  th {
+    font-size: 13px;
+    padding: 11px;
+  }
+
   td {
-    padding: 11px 12px;
+    font-size: 13px;
+    padding: 11px;
+  }
+
+  td button:first-child,
+  td button:last-child {
+    padding: 6px 10px;
+
+    font-size: 12px;
   }
 }
 
 
-/* ==============================
-   SMALL MOBILE
-================================ */
 
-@media (max-width: 400px) {
+@media (max-width: 360px) {
 
-  body > #root > div {
-    padding: 20px 8px;
+  #root > div {
+    padding: 15px 8px;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   form {
@@ -347,11 +355,26 @@ body > #root > div {
   }
 
   form input {
+    height: 42px;
+
     font-size: 13px;
   }
 
-  td button {
-    font-size: 12px !important;
-    padding: 6px 9px !important;
+  form button {
+    height: 42px;
+
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 9px;
+  }
+
+  td button:first-child,
+  td button:last-child {
+    padding: 5px 8px;
+
+    font-size: 11px;
   }
 }
